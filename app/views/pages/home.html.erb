@@ -1,1 +1,5 @@
-<h1>Hola <%= params[:name].to_i+5 %> años</h1>
+<!-- <h1>Hola <%= params[:name].to_i+5 %> años</h1> -->
+
+<h1><%= @name %></h1>
+<!-- <a href='<%= @url %>'>ir a</a> -->
+<%= link_to "ir al home", home_path %>
