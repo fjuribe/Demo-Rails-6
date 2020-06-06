@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'author/index'
+  get 'author/create'
+  get 'author/delete'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
    
 
@@ -8,7 +11,10 @@ Rails.application.routes.draw do
 
    get '/prueba', to:'pages#prueba'
 
-    get '/home' => 'pages#home'
+   get '/home' => 'pages#home'
+
+
+   get '/autor', to: 'author#index' , as: 'author'
 
    # es posible omitir el controlador
    # y el método siempre y cuando la ruta tenga la forma /<controlador>/<método>
