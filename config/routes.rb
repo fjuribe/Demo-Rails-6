@@ -3,10 +3,12 @@ Rails.application.routes.draw do
    
 
    # forma generica para definir una ruta
-   get '/home/:name',to:'pages#home'
+   # get '/home/:name',to:'pages#home'
    get '/libros',to:'books#index', as: "home"
 
-   # get '/home', => 'pages#home'
+   get '/prueba', to:'pages#prueba'
+
+    get '/home' => 'pages#home'
 
    # es posible omitir el controlador
    # y el método siempre y cuando la ruta tenga la forma /<controlador>/<método>
