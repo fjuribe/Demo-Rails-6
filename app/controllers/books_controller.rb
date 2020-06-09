@@ -1,4 +1,9 @@
 class BooksController < ApplicationController
+
+
+  #proteger con autenticacion algunas acciones 
+  before_action :authenticate_user!,except: [:index , :show]
+
 	def index
 		# @books=["Pragmatic Programmer", "Eloquent Ruby", "Secrets of the JavaScript Ninja"]
 		@books=Book.all
@@ -46,7 +51,7 @@ class BooksController < ApplicationController
        flash[:notice] = "El libro ha sido eliminado exitosamente"
 
        # redirect_to books_path, notice: "El libro ha sido eliminado exitosamente"
-         redirect_to books_path
+        redirect_to books_path
     end
 
 
