@@ -4,10 +4,13 @@ class BooksController < ApplicationController
   #proteger con autenticacion algunas acciones 
   before_action :authenticate_user!,except: [:index , :show]
 
-	def index
+  def index
 		# @books=["Pragmatic Programmer", "Eloquent Ruby", "Secrets of the JavaScript Ninja"]
-		@books=Book.all
-	end
+		# @books=Book.all
+    @books = Book.all.paginate(page: params[:page], per_page:12)
+    puts "=>#{@books}"
+  end
+
 
 	def show
        @book=Book.find(params[:id])
